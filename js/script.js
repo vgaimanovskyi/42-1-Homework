@@ -1,13 +1,13 @@
 const app = new Vue({
     el: '#app',
     data: {
-        colors: [],
-        selected: ""
+        newColor: "",
+        palette: [],
     },
     methods: {
         colorAdd() {
-            this.colors.push(document.getElementById("color").value);
-            console.log(this.colors)
+            this.palette.push(this.newColor);
+            console.log(this.palette)
         }
     }
 })

@@ -12,14 +12,14 @@
 <body>
     <div id="app">
         <form class="form" onsubmit="return false">
-            <input type="text" id="color" placeholder="Enter color" required>
+            <input type="text" placeholder="Enter color" required v-model="newColor">
             <button class="btn" @click="colorAdd()">Add to palette</button>
         </form>
         <div class="mainer">
-            <p class="text" v-bind:style="{color: selected}">Lorem ipsum dolor sit amet.</p>
-            <select id="palette" v-model="selected">
+            <p class="text" v-bind:style="{color: newColor}">Lorem ipsum dolor sit amet.</p>
+            <select id="palette">
                 <option disabled>Выберите цвет</option>
-                <option v-for="color in colors" v-bind:value="color.value">
+                <option v-for="color in palette" v-bind:value="color.value">
                     {{ color }}
                 </option>
             </select>
