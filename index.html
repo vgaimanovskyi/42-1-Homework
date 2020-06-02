@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/d223746498.js" crossorigin="anonymous"></script>
+    <title>42-1-homework</title>
+</head>
+
+<body>
+    <div id="app">
+        <form class="form" onsubmit="return false">
+            <input type="text" id="color" placeholder="Enter color" required>
+            <button class="btn" @click="colorAdd()">Add to palette</button>
+        </form>
+        <div class="mainer">
+            <p class="text" v-bind:style="{color: selected}">Lorem ipsum dolor sit amet.</p>
+            <select id="palette" v-model="selected">
+                <option disabled>Выберите цвет</option>
+                <option v-for="color in colors" v-bind:value="color.value">
+                    {{ color }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
